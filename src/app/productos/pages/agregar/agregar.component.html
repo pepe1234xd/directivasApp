@@ -1,0 +1,35 @@
+<h1 class="mt-5">Agregar Producto</h1><hr>
+
+<form [formGroup]="miFormulario">
+    <div class="row g-3 align-items-center mb-3">
+        <div class="col-auto">
+            <label class="col=form-label">Nombre</label>
+
+        </div>
+
+        <div class="col-auto">
+           <input type="text" class="form-control" formControlName="nombre">
+
+        </div>
+
+        <div class="col-auto">
+            <span error-msg *ngIf="tieneError('nombre')" [color]="color" [mensaje]="texto"></span>
+
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <button type="button" class="btn btn-primary" (click)="cambiarNombre()">Cambiar Nombre</button>
+            
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary ml-1" (click)="cambiarColor()">Cambiar Color</button>
+            
+        </div>
+    </div>
+</form>
+
+<h3 class="mt-5">Formulario</h3>
+<pre>Valid:{{miFormulario.valid}}</pre>
+<pre>Value:{{miFormulario.value| json}}</pre>
